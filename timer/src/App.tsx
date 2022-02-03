@@ -1,9 +1,11 @@
-import React from 'react';
+import React from "react";
+import "./App.scss";
+
+import TimerPage from "./page"
 
 function App() {
   return (
-    <div className="App">
-    </div>
+    <TimerPage/>
   );
 }
 
