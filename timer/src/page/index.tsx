@@ -53,7 +53,7 @@ const TimerPage: React.FC<ComponentProps> = () => {
 
   return (
     <Layout>
-      <Timer settings={timer} onComplete={resetTimer}>
+      <Timer data-testid="timer-1" settings={timer} onComplete={resetTimer}>
         {(hours, minutes, seconds) => (
           <>
             <div className="timer">

@@ -8,9 +8,9 @@ const Timer: React.FC<ComponentProps> = ({
   onComplete,
   children,
 }) => {
-  const hours = settings.getHours();
-  const minutes = settings.getMinutes();
-  const seconds = settings.getSeconds();
+  const hours = settings?.getHours();
+  const minutes = settings?.getMinutes();
+  const seconds = settings?.getSeconds();
   return children(hours, minutes, seconds);
 };
 
