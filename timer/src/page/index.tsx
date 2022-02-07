@@ -7,6 +7,8 @@ import Timer from "../components/timer";
 
 const date = new Date("2020-01-01 00:00:08");
 
+let tickTimer: any;
+
 const TimerPage: React.FC<ComponentProps> = () => {
   const [timer, setTimer] = useState<Date>(date);
   const [isTicking, setTicking] = useState<boolean>(false);
@@ -16,19 +18,15 @@ const TimerPage: React.FC<ComponentProps> = () => {
   }, []);
 
   useEffect(() => {
-    const runTimer = () => {
-      const tickTimer = setTimeout(() => {
-        if (
-          isTicking &&
-          !(!timer.getSeconds() && !timer.getMinutes() && !timer.getHours())
-        ) {
-          setTimer((timer) => new Date(+timer - 1000));
-        }
-      }, 1000);
-      return () => clearTimeout(tickTimer);
-    };
-
-    runTimer();
+    tickTimer = setTimeout(() => {
+      if (
+        isTicking &&
+        !(!timer.getSeconds() && !timer.getMinutes() && !timer.getHours())
+      ) {
+        setTimer((timer) => new Date(+timer - 1000));
+      }
+    }, 1000);
+    return () => clearTimeout(tickTimer);
   }, [timer, isTicking]);
 
   const updateTimer = (): void => {
@@ -37,6 +35,7 @@ const TimerPage: React.FC<ComponentProps> = () => {
   };
 
   const pauseTimer = (): void => {
+    clearTimeout(tickTimer);
     setTicking(!isTicking);
   };
 

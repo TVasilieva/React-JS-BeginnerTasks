@@ -1,13 +1,21 @@
-import { render, screen, cleanup } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 
 import TimerPage from "../index";
 
+//test("properly renders timer", () => {});
+
 describe("TimerPage", () => {
+  //doesn't work
   test("should render Timer component", () => {
     render(<TimerPage />);
-    const Timer = screen.queryByTestId("timer-1");
+    const Timer = screen.queryByRole("timer-1");
     expect(Timer).toBeDefined();
+  });
+  test("there are 1 Timer Component", () => {
+    render(<TimerPage />);
+    const Timer = screen.getAllByRole("Timer");
+    expect(Timer).toHaveLength(1);
   });
 });
 
@@ -40,7 +48,6 @@ describe("Check buttons", () => {
 //check if data updates after clicking
 //check if data resets afer clicking reset-btn
 //button turns blue after clicking
-
 
 //Timer
 
