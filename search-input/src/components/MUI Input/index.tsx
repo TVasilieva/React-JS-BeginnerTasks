@@ -7,7 +7,7 @@ import { ComponentProps } from "./types";
 
 const filter = createFilterOptions();
 
-const MUIInput: React.FC<ComponentProps> = ({ data }) => {
+const MUIInput: React.FC<ComponentProps> = ({ data, mode }) => {
   const [value, setValue] = React.useState<any>(null);
 
   return (
