@@ -1,0 +1,10 @@
+.MUIInput {
+  width: 48%;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.MUIInput:hover {
+  transition: 0.4s;
+  transform: scale(1.01);
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
+}

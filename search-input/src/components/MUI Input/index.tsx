@@ -2,6 +2,7 @@ import React from "react";
 import TextField from "@mui/material/TextField";
 import Autocomplete, { createFilterOptions } from "@mui/material/Autocomplete";
 
+import "./style.scss";
 import { ComponentProps } from "./types";
 
 const filter = createFilterOptions();
@@ -12,6 +13,7 @@ const MUIInput: React.FC<ComponentProps> = ({ data }) => {
   return (
     <Autocomplete
       value={value}
+      className="MUIInput"
       onChange={(event, newValue) => {
         if (typeof newValue === "string") {
           setValue({
@@ -56,7 +58,6 @@ const MUIInput: React.FC<ComponentProps> = ({ data }) => {
         return option.title;
       }}
       renderOption={(props, option) => <li {...props}>{option.title}</li>}
-      sx={{ width: 300 }}
       freeSolo
       renderInput={(params) => (
         <TextField {...params} label="Free solo with text demo" />
