@@ -1,11 +1,12 @@
-import React from "react";
+import React, { FC, useState, useEffect } from "react";
+import debounce from "lodash.debounce";
 import { top100FilmsType } from "../../data";
 
 import "./style.scss";
 import { ComponentProps } from "./types";
 
-const ControlledInput: React.FC<ComponentProps> = ({ data, mode }) => {
-  const [filter, setFilter] = React.useState("");
+const ControlledInput: FC<ComponentProps> = ({ data, mode }) => {
+  const [filter, setFilter] = useState<string>("");
 
   const searchItem =
     (filter: string) =>
@@ -14,15 +15,22 @@ const ControlledInput: React.FC<ComponentProps> = ({ data, mode }) => {
       console.log(
         data.filter((e) => e.title.toLowerCase().includes(filter.toLowerCase()))
       );
+      setFilter("");
     };
 
   const handleChange = (e: any): void => {
-    setFilter(e.target.value);
+    setFilter(e?.target?.value);
   };
 
-  const dataOptions = data.map((e: top100FilmsType) => {
-    return <option value={e.title} key={Math.random() * Math.random()} />;
-  });
+  const debouncedOnChange = debounce(handleChange, 500);
+
+  let dataOptions;
+
+  if (filter) {
+    dataOptions = data.map((e: top100FilmsType) => {
+      return <option value={e.title} key={Math.random() * Math.random()} />;
+    });
+  }
 
   return (
     <form
@@ -33,7 +41,8 @@ const ControlledInput: React.FC<ComponentProps> = ({ data, mode }) => {
       <input
         list="browsers"
         className="controlled-input"
-        onChange={handleChange}
+        onChange={mode ? debouncedOnChange : handleChange}
+        value={filter}
       />
       <datalist id="browsers">{dataOptions}</datalist>
       <button className="controlled-button">Search</button>
