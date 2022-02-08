@@ -18,17 +18,17 @@ const App = () => {
     Enter: (e: any) => {
       e.key === "Enter" && e.preventDefault();
     },
-    StopTyping: false,
+    StopTyping: true,
   };
 
   return (
     <div className="container">
+      {/* Data*/}
       <MUIInput data={top100Films} mode={SearchInputModes.Immediate} />
-      <ControlledInput data={top100Films} mode={SearchInputModes.Enter} />
-      <UncontrolledInput
-        data={top100Films}
-        mode={SearchInputModes.StopTyping}
-      />
+      {/* Datalist flows with 0.5 sec delay if StopTyping: true*/}
+      <ControlledInput data={top100Films} mode={SearchInputModes.StopTyping} />
+      {/* Doesn't start searching after pushing "Enter"*/}
+      <UncontrolledInput data={top100Films} mode={SearchInputModes.Enter} />
     </div>
   );
 };

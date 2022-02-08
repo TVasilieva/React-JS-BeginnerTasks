@@ -1,5 +1,5 @@
-import React, { FC, useState, useEffect } from "react";
-import debounce from "lodash.debounce";
+import React, { FC, useState } from "react";
+import { DebounceInput } from "react-debounce-input";
 import { top100FilmsType } from "../../data";
 
 import "./style.scss";
@@ -13,7 +13,9 @@ const ControlledInput: FC<ComponentProps> = ({ data, mode }) => {
     (e: any): void => {
       e.preventDefault();
       console.log(
-        data.filter((e) => e.title.toLowerCase().includes(filter.toLowerCase()))
+        data.filter((e: any) =>
+          e?.title?.toLowerCase().includes(filter.toLowerCase())
+        )
       );
       setFilter("");
     };
@@ -21,8 +23,6 @@ const ControlledInput: FC<ComponentProps> = ({ data, mode }) => {
   const handleChange = (e: any): void => {
     setFilter(e?.target?.value);
   };
-
-  const debouncedOnChange = debounce(handleChange, 500);
 
   let dataOptions;
 
@@ -33,18 +33,24 @@ const ControlledInput: FC<ComponentProps> = ({ data, mode }) => {
   }
 
   return (
-    <form
-      className="controlled-form"
-      onSubmit={searchItem(filter)}
-      onKeyPress={mode}
-    >
-      <input
-        list="browsers"
-        className="controlled-input"
-        onChange={mode ? debouncedOnChange : handleChange}
-        value={filter}
-      />
-      <datalist id="browsers">{dataOptions}</datalist>
+    <form className="controlled-form" onSubmit={searchItem(filter)}>
+      {mode ? (
+        <DebounceInput
+          list="data"
+          className="controlled-input"
+          debounceTimeout={500}
+          onChange={handleChange}
+          value={filter}
+        />
+      ) : (
+        <input
+          list="data"
+          className="controlled-input"
+          onChange={handleChange}
+          value={filter}
+        />
+      )}
+      <datalist id="data">{dataOptions}</datalist>
       <button className="controlled-button">Search</button>
     </form>
   );
