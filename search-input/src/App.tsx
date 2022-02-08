@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FC, KeyboardEventHandler } from "react";
 import "./App.scss";
 import ControlledInput from "./components/Controlled input";
 import MUIInput from "./components/MUI Input";
@@ -8,11 +8,11 @@ import { top100Films } from "./data";
 
 type SearchInputModes = {
   Immediate: string;
-  Enter: (e: any) => void;
+  Enter: KeyboardEventHandler<HTMLFormElement>;
   StopTyping: boolean;
 };
 
-const App = () => {
+const App: FC = () => {
   const SearchInputModes: SearchInputModes = {
     Immediate: "Immediate",
     Enter: (e: any) => {
@@ -23,7 +23,7 @@ const App = () => {
 
   return (
     <div className="container">
-      {/* Data*/}
+      {/* Data that changes immediate*/}
       <MUIInput data={top100Films} mode={SearchInputModes.Immediate} />
       {/* Datalist flows with 0.5 sec delay if StopTyping: true*/}
       <ControlledInput data={top100Films} mode={SearchInputModes.StopTyping} />

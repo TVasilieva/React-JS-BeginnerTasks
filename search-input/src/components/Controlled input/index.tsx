@@ -1,4 +1,4 @@
-import React, { FC, useState } from "react";
+import React, { ChangeEvent, FC, FormEvent, useState } from "react";
 import { DebounceInput } from "react-debounce-input";
 import { top100FilmsType } from "../../data";
 
@@ -10,17 +10,17 @@ const ControlledInput: FC<ComponentProps> = ({ data, mode }) => {
 
   const searchItem =
     (filter: string) =>
-    (e: any): void => {
+    (e: FormEvent<HTMLFormElement>): void => {
       e.preventDefault();
       console.log(
-        data.filter((e: any) =>
+        data.filter((e: top100FilmsType) =>
           e?.title?.toLowerCase().includes(filter.toLowerCase())
         )
       );
       setFilter("");
     };
 
-  const handleChange = (e: any): void => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement>): void => {
     setFilter(e?.target?.value);
   };
 
