@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1643982491366" clover="3.2.0">
+  <project timestamp="1643982491366" name="All files">
+    <metrics statements="32" coveredstatements="25" conditionals="18" coveredconditionals="7" methods="12" coveredmethods="6" elements="62" coveredelements="38" complexity="0" loc="32" ncloc="32" packages="2" files="2" classes="2"/>
+    <package name="components.timer">
+      <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="index.tsx" path="D:\Beginner\React-JS-BeginnerTasks\timer\src\components\timer\index.tsx">
+        <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="page">
+      <metrics statements="27" coveredstatements="20" conditionals="18" coveredconditionals="7" methods="11" coveredmethods="5"/>
+      <file name="index.tsx" path="D:\Beginner\React-JS-BeginnerTasks\timer\src\page\index.tsx">
+        <metrics statements="27" coveredstatements="20" conditionals="18" coveredconditionals="7" methods="11" coveredmethods="5"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="18" count="1" type="stmt"/>
+        <line num="19" count="1" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
+        <line num="21" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="25" count="0" type="stmt"/>
+        <line num="28" count="1" type="stmt"/>
+        <line num="31" count="1" type="stmt"/>
+        <line num="34" count="1" type="stmt"/>
+        <line num="35" count="0" type="stmt"/>
+        <line num="36" count="0" type="stmt"/>
+        <line num="39" count="1" type="stmt"/>
+        <line num="40" count="0" type="stmt"/>
+        <line num="43" count="1" type="stmt"/>
+        <line num="44" count="0" type="stmt"/>
+        <line num="45" count="0" type="stmt"/>
+        <line num="48" count="1" type="stmt"/>
+        <line num="49" count="1" type="stmt"/>
+        <line num="50" count="1" type="stmt"/>
+        <line num="52" count="1" type="cond" truecount="3" falsecount="0"/>
+        <line num="54" count="1" type="stmt"/>
+        <line num="58" count="1" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>

@@ -1,0 +1,34 @@
+.controlled-form {
+  width: 48%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.controlled-input {
+  width: 100%;
+  padding: 9px;
+  margin-right: 2%;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.controlled-input:hover {
+  transition: 0.4s;
+  transform: scale(1.01);
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
+}
+
+.controlled-button {
+  border: 1px solid #000;
+  border-radius: 5px;
+  background-color: grey;
+  color: #fff;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.controlled-button:hover {
+  transition: 0.3s;
+  border-radius: 8px;
+}

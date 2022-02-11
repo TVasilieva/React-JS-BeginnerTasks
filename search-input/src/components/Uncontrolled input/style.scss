@@ -1,0 +1,41 @@
+.uncontrolled-form {
+  width: 48%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.uncontrolled-input {
+  width: 100%;
+  padding: 13px;
+  margin-right: 2%;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px 0 rgba(252, 9, 9, 0.2);
+  font: 14px "Roboto, sans-serif";
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.uncontrolled-input:hover {
+  transition: 0.4s;
+  transform: scale(1.01);
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
+}
+
+.uncontrolled-button {
+  border: 1px solid #000;
+  border-radius: 5px;
+  background-color: salmon;
+  color: #000;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.uncontrolled-button:hover {
+  background-color: grey;
+  color: #fff;
+  transition: 0.7s;
+  border-radius: 50%;
+}
