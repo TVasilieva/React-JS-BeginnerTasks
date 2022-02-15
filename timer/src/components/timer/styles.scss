@@ -1,0 +1,47 @@
+button {
+  cursor: pointer;
+  margin-top: 7%;
+  padding: 0.5em;
+  border: none;
+  border-radius: 5px;
+  font-size: 90%;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.2px;
+}
+
+button:active {
+  transform: scale(1.1);
+  transition-duration: 0.4s;
+  background-color: #7d9ce0;
+  color: white;
+}
+
+.timer {
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  text-align: center;
+  width: 100%;
+  font-size: 400%;
+  font-family: Arial Black, sans-serif;
+  color: #fff;
+}
+
+.timer-ends {
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  text-align: center;
+  width: 100%;
+  font-size: 300%;
+  font-family: Arial Black, sans-serif;
+  color: #fff;
+}
+
+.button-group {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
